@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
+from pprint import pprint
 
 
 def pre_process_text(name, n=3):
@@ -69,5 +70,5 @@ if __name__ == '__main__':
     company_name_vectors = tfidf.fit_transform(company_names_df['Company Name'])
 
     # Example
-    result_df = match_company_name("#1 ARIZONA DISCOUNT PROPERTIES LLC", tfidf, company_name_vectors, company_names_df)
+    result_df = match_company_name("ADVISORY U S EQUITY MARKET", tfidf, company_name_vectors, company_names_df)
     print(result_df)
